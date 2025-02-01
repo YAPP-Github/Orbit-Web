@@ -1,46 +1,52 @@
 // src/components/Footer/Footer.jsx
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
     <footer className="bg-[#233D61] text-white py-8">
       <div className="container mx-auto px-4">
-        {/* 상단 섹션: 로고 및 설명 */}
-        <div className="flex flex-col md:flex-row md:justify-between items-center mb-6">
-          <div className="mb-4 md:mb-0">
-            <h2 className="text-2xl font-bold">Orbit-Web</h2>
-          </div>
-          
-          {/* 소셜 미디어 아이콘 */}
-          <div className="flex space-x-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-              <FaFacebookF />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-              <FaTwitter />
-            </a>
-            <a href="https://www.instagram.com/orbit_alarm" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-              <FaInstagram />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">
-              <FaLinkedinIn />
-            </a>
-          </div>
+        {/* Orbit 로고 */}
+        <div className="flex mb-6">
+          <h2 className="text-2xl font-bold">Orbit</h2>
         </div>
-
-        {/* 중간 섹션: 네비게이션 링크 */}
-        <div className="flex flex-col md:flex-row md:justify-between mb-6">
-
-          <div>
+        
+        {/* Legal 섹션과 Instagram 링크 */}
+        <div className="flex flex-col md:flex-row md:justify-between items-center mb-6">
+          {/* Legal 섹션 */}
+          <div className="mb-4 md:mb-0">
             <h3 className="text-lg font-semibold mb-2">Legal</h3>
-            <ul>
-              <li className="mb-1">
-                <a href="/privacy" className="hover:text-gray-400">Privacy Policy</a>
+            <ul className="flex flex-col md:flex-row md:space-x-4">
+              <li className="mb-1 md:mb-0">
+                <a href="/privacy" className="hover:text-gray-400">
+                  Privacy Policy
+                </a>
               </li>
               <li>
-                <a href="/terms" className="hover:text-gray-400">Terms of Service</a>
+                <a href="/terms" className="hover:text-gray-400">
+                  Terms of Service
+                </a>
               </li>
             </ul>
+          </div>
+
+          {/* 소셜 미디어 아이콘 및 텍스트 */}
+          <div className="flex items-center space-x-2">
+            <a 
+              href="https://www.instagram.com/orbit_alarm" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 hover:text-gray-400 transition"
+            >
+              <FaInstagram className="text-2xl" />
+            </a>
+            <a 
+              href="https://github.com/YAPP-Github/Orbit-BE" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center space-x-2 hover:text-gray-400 transition"
+            >
+              <FaGithub className="text-2xl" />
+            </a>
           </div>
         </div>
 

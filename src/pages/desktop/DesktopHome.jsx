@@ -1,19 +1,16 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
-import Footer from '@components/Footer/Footer'; // 실제 경로에 맞춰 조정하세요
+import Footer from '@components/Footer/Footer';
 
 export default function Home() {
-  // 1) 폼 섹션으로 스크롤하기 위한 useRef
   const reservationFormRef = useRef(null);
 
-  // 사전 예약 하러가기 버튼 → 폼 섹션으로 스크롤
   const scrollToReservationForm = () => {
     if (reservationFormRef.current) {
       reservationFormRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // 2) 폼 제출 시 내부 API 호출 → (예) Discord Webhook 전송 (서버 사이드)
   const handleReservationSubmit = async (event) => {
     event.preventDefault();
 
@@ -22,7 +19,7 @@ export default function Home() {
     const phone = formData.get('phone');
 
     try {
-      const response = await fetch('https://orbitalarm.net/api/reservation', {
+      const response = await fetch('http://dev.orbitalarm.net/api/v1/prereservations', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, phone }),
@@ -33,7 +30,6 @@ export default function Home() {
       }
 
       alert('사전 예약이 완료되었습니다!');
-      // event.currentTarget.reset();
     } catch (error) {
       console.error(error);
       alert('오류가 발생했습니다. 다시 시도해주세요.');
@@ -47,7 +43,7 @@ export default function Home() {
             [섹션 1] 배경 이미지 (desktop_bg1.svg), 높이 1445px
          ---------------------------------------------------------------- */}
         <section
-          className="relative flex flex-col items-center justify-start"
+          className="relative flex flex-col items-center justify-start overflow-hidden"
           style={{
             backgroundImage: `url('/assets/images/desktop_bg1.svg')`,
             backgroundSize: 'cover',
@@ -69,7 +65,7 @@ export default function Home() {
             />
 
             <div className="w-[700px] text-center mb-[18px]">
-              <p className="font-pretendard font-bold text-[60px] leading-[90px]">
+              <p className="font-pretendard font-bold text-[60px] leading-[90px] whitespace-nowrap">
                 운세로 맞이하는 즐거운 아침 <br />
                 오르비 알람
               </p>
@@ -77,7 +73,7 @@ export default function Home() {
 
             <button
               onClick={scrollToReservationForm}
-              className="mt-4 w-[320px] h-[70px] bg-[#FDFE96] text-black rounded-2xl text-xl hover:bg-yellow-300 transition"
+              className="mt-4 w-[320px] h-[70px] bg-[#FDFE96] text-black rounded-2xl text-xl hover:bg-[#0F223F] hover:text-[#FDFE96] font-medium transition-colors"
             >
               사전 예약 하러가기
             </button>
@@ -114,11 +110,11 @@ export default function Home() {
             viewport={{ once: false }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-white text-opacity-70 text-[24px] leading-[36px] font-medium mb-4">
+            <p className="text-white text-opacity-70 text-[24px] leading-[36px] font-medium mb-4 whitespace-nowrap">
               아침에 가장 먼저 듣게되는 기상알람
             </p>
 
-            <p className="text-white text-[40px] leading-[60px] font-bold mb-6">
+            <p className="text-white text-[40px] leading-[60px] font-bold mb-6 whitespace-nowrap">
               기분 좋은 아침을 맞이하고 계신가요?
             </p>
           </motion.div>
@@ -152,8 +148,8 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-white text-[40px] leading-[60px] font-bold mb-6">
-              매번 반복되고 지겨운 알람, <br/>
+            <p className="text-white text-[40px] leading-[60px] font-bold mb-6 whitespace-nowrap">
+              매번 반복되고 지겨운 알람, <br />
               기상에 대한 ‘동기부여’가 필요합니다
             </p>
           </motion.div>
@@ -177,7 +173,7 @@ export default function Home() {
             [섹션 4] 배경 이미지 (desktop_bg2.svg), 높이 960px
          ---------------------------------------------------------------- */}
         <section
-          className="flex flex-col md:flex-row items-center justify-center gap-8 px-16 py-12"
+          className="flex flex-col md:flex-row items-center justify-center gap-8 px-16 py-12 overflow-hidden"
           style={{
             backgroundImage: `url('/assets/images/desktop_bg2.svg')`,
             backgroundSize: 'cover',
@@ -198,7 +194,7 @@ export default function Home() {
               className="mb-6 w-auto h-16"
             />
 
-            <p className="text-white width text-[40px] leading-[60px] font-bold mb-6 text-left">
+            <p className="text-white text-[40px] leading-[60px] font-bold mb-6 text-left whitespace-nowrap">
               기상 알람과 함께<br />
               제공되는 하루 운세로<br />
               기분 좋은 아침을 맞이하세요!
@@ -206,7 +202,7 @@ export default function Home() {
 
             <button
               onClick={scrollToReservationForm}
-              className="mt-4 w-[320px] h-[70px] bg-[#FDFE96] text-black rounded-2xl text-xl hover:bg-yellow-300 transition"
+              className="mt-4 w-[320px] h-[70px] bg-[#FDFE96] text-black rounded-2xl text-xl hover:bg-[#0F223F] hover:text-[#FDFE96] font-medium transition-colors"
             >
               사전 예약 하러가기
             </button>
@@ -236,23 +232,23 @@ export default function Home() {
         >
           {/* 상단 절반: 왼쪽 텍스트, 오른쪽 이미지 */}
           <div className="flex flex-col md:flex-row w-full h-1/2 items-center justify-center gap-8">
-            {/* 왼쪽 텍스트 (40%) */}
+            {/* 왼쪽 텍스트 (40%) → 중앙 기준에 맞춰 오른쪽 정렬 */}
             <motion.div
-              className="md:w-2/5 flex justify-center items-center h-full"
+              className="md:w-2/5 flex justify-end items-center h-full"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <div className="max-w-[600px] text-left">
-                <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4">
+                <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4 whitespace-nowrap">
                   운세 기상 알람
                 </p>
-                <p className="font-bold text-[36px] leading-[54px] text-white mb-4">
+                <p className="font-bold text-[36px] leading-[54px] text-white mb-4 whitespace-nowrap">
                   기상 시간에 하루 운세를<br />
                   받을 수 있도록 알람을 설정해요
                 </p>
-                <p className="font-regular text-[20px] leading-[30px] text-white/70">
+                <p className="font-regular text-[20px] leading-[30px] text-white/70 whitespace-nowrap">
                   설정한 시간에 맞춰 미션과 운세를 보내드릴게요<br />
                   첫 알람에서 미션을 성공하면 보상을 받을 수 있어요
                 </p>
@@ -292,23 +288,23 @@ export default function Home() {
               />
             </motion.div>
 
-            {/* 오른쪽 텍스트 (40%) */}
+            {/* 오른쪽 텍스트 (40%) → 중앙 기준에 맞춰 왼쪽 정렬 */}
             <motion.div
-              className="md:w-2/5 flex justify-center items-center h-full"
+              className="md:w-2/5 flex justify-start items-center h-full"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
               <div className="max-w-[600px] text-right">
-                <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4">
+                <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4 whitespace-nowrap">
                   기상 미션
                 </p>
-                <p className="font-bold text-[36px] leading-[54px] text-white mb-4">
+                <p className="font-bold text-[36px] leading-[54px] text-white mb-4 whitespace-nowrap">
                   기상 미션에 성공하면<br />
                   오늘의 운세를 확인할 수 있어요
                 </p>
-                <p className="font-regular text-[20px] leading-[30px] text-white/70">
+                <p className="font-regular text-[20px] leading-[30px] text-white/70 whitespace-nowrap">
                   기상 미션을 수행하며 상쾌하게 잠을 깨보세요<br />
                   자연스럽게 잠에서 깨어날 수 있게 도와드릴게요
                 </p>
@@ -321,25 +317,25 @@ export default function Home() {
             [섹션 6] 배경 색상 #233D61, 스크롤/폼
          ---------------------------------------------------------------- */}
         <section
-          className="flex flex-col items-center justify-center px-16 py-12 text-center space-y-16"
+          className="flex flex-col items-center justify-center px-16 py-12 text-center"
           style={{ backgroundColor: '#233D61' }}
         >
           {/* 1) "오늘의 운세" 텍스트 */}
           <motion.div
-            className="max-w-2xl mx-auto pt-[150px]"
+            className="max-w-2xl mx-auto pt-[150px] mb-24"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4">
+            <p className="font-medium text-[24px] leading-[36px] text-[#FEFF65] mb-4 whitespace-nowrap">
               오늘의 운세
             </p>
-            <p className="font-bold text-[36px] leading-[54px] text-white mb-4">
+            <p className="font-bold text-[36px] leading-[54px] text-white mb-6 whitespace-nowrap">
               오늘 하루를 어떤 마음가짐으로<br />
               시작할지 결정해 보세요!
             </p>
-            <p className="font-regular text-[20px] leading-[30px] text-white/70">
+            <p className="font-regular text-[20px] leading-[30px] text-white/70 whitespace-nowrap">
               오늘 하루를 위한 추천 행동, 주의할 점, 그리고 행운의 코디까지! <br />
               아침을 더욱 의미 있게 만들어 줄 운세 정보를 확인하며 기상에 대한 동기를 얻어보세요.
             </p>
@@ -347,7 +343,7 @@ export default function Home() {
 
           {/* 2) 이미지 */}
           <motion.div
-            className="mx-auto"
+            className="mx-auto mb-32"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -362,7 +358,7 @@ export default function Home() {
 
           {/* 3) "출시 예정" 파트 */}
           <motion.div
-            className="max-w-2xl mx-auto flex flex-col items-center"
+            className="max-w-2xl mx-auto flex flex-col items-center mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -373,10 +369,10 @@ export default function Home() {
               alt="Orbit Clock Icon"
               className="mb-6 w-auto h-16"
             />
-            <p className="font-regular text-[20px] leading-[30px] text-white/70 mb-4">
+            <p className="font-regular text-[20px] leading-[30px] text-white/70 mb-4 whitespace-nowrap">
               2025년 2월, 정식 버전 출시 예정
             </p>
-            <p className="font-bold text-[36px] leading-[54px] text-white">
+            <p className="font-bold text-[36px] leading-[54px] text-white whitespace-nowrap">
               스토어에 출시되면 알람을 보내드릴게요<br />
               <span className="text-[#FEFF65]">사전 예약</span>하고 즐거운 기상을 시작해보세요!!
             </p>
@@ -394,7 +390,7 @@ export default function Home() {
           >
             {/* 이메일 입력 */}
             <div className="flex flex-col items-start w-full">
-              <label htmlFor="email" className="text-white font-medium mb-2">
+              <label htmlFor="email" className="text-white font-medium mb-2 whitespace-nowrap">
                 이메일
               </label>
               <input
@@ -402,15 +398,13 @@ export default function Home() {
                 name="email"
                 type="email"
                 placeholder="noreply@orbitalarm.net"
-                className="w-full px-4 py-2 rounded-md bg-[#2A2C33] 
-                          text-white focus:outline-none 
-                          focus:ring-2 focus:ring-[#FEFF65]"
+                className="w-full px-4 py-2 rounded-md bg-[#2A2C33] text-white focus:outline-none focus:ring-2 focus:ring-[#FEFF65]"
               />
             </div>
 
             {/* 연락처 입력 */}
             <div className="flex flex-col items-start w-full">
-              <label htmlFor="phone" className="text-white font-medium mb-2">
+              <label htmlFor="phone" className="text-white font-medium mb-2 whitespace-nowrap">
                 연락처
               </label>
               <input
@@ -418,26 +412,20 @@ export default function Home() {
                 name="phone"
                 type="tel"
                 placeholder="010-1234-5678"
-                className="w-full px-4 py-2 rounded-md bg-[#2A2C33] 
-                          text-white focus:outline-none 
-                          focus:ring-2 focus:ring-[#FEFF65]"
+                className="w-full px-4 py-2 rounded-md bg-[#2A2C33] text-white focus:outline-none focus:ring-2 focus:ring-[#FEFF65]"
               />
             </div>
 
             {/* 제출 버튼 */}
             <button
               type="submit"
-              className="mt-2 w-full py-3 bg-[#FEFF65] text-black 
-                         font-semibold rounded-md 
-                         hover:bg-yellow-300 transition-colors"
+              className="mt-2 w-full py-3 bg-[#FEFF65] text-black font-semibold rounded-md hover:bg-[#0F223F] hover:text-[#FDFE96] transition-colors whitespace-nowrap"
             >
               사전 예약하기
             </button>
           </motion.form>
         </section>
       </main>
-
-      {/* Footer (생략 가능) */}
       <Footer />
     </div>
   );
