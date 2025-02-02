@@ -2,37 +2,14 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '@components/Footer/Footer';
+import { submitReservation } from '@services/reservationService';
 
 export default function MobileHome() {
-  // 폼 섹션 스크롤용 useRef
   const reservationFormRef = useRef(null);
 
-  // 사전 예약 버튼 클릭 시 폼 섹션 스크롤
   const scrollToReservationForm = () => {
     if (reservationFormRef.current) {
       reservationFormRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // 폼 제출 시 API 호출
-  const handleReservationSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-    try {
-      const response = await fetch('http://api.orbitalarm.net/reservation', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
-      });
-      if (!response.ok) {
-        throw new Error('사전 예약 API 요청 실패');
-      }
-      alert('사전 예약이 완료되었습니다!');
-    } catch (error) {
-      console.error(error);
-      alert('오류가 발생했습니다. 다시 시도해주세요.');
     }
   };
 
@@ -364,7 +341,7 @@ export default function MobileHome() {
           {/* 폼 섹션 */}
           <motion.form
             ref={reservationFormRef}
-            onSubmit={handleReservationSubmit}
+            onSubmit={submitReservation}
             className="w-full max-w-sm flex flex-col gap-4"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

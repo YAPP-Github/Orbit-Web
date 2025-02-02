@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '@components/Footer/Footer';
+import { submitReservation } from '@services/reservationService';
+
 
 export default function Home() {
   const reservationFormRef = useRef(null);
@@ -8,31 +10,6 @@ export default function Home() {
   const scrollToReservationForm = () => {
     if (reservationFormRef.current) {
       reservationFormRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleReservationSubmit = async (event) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-
-    try {
-      const response = await fetch('http://dev.orbitalarm.net/api/v1/prereservations', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, phone }),
-      });
-
-      if (!response.ok) {
-        throw new Error('사전 예약 API 요청 실패');
-      }
-
-      alert('사전 예약이 완료되었습니다!');
-    } catch (error) {
-      console.error(error);
-      alert('오류가 발생했습니다. 다시 시도해주세요.');
     }
   };
 
@@ -381,7 +358,7 @@ export default function Home() {
           {/* 4) 폼 섹션 → ref로 연결됨 */}
           <motion.form
             ref={reservationFormRef}
-            onSubmit={handleReservationSubmit}
+            onSubmit={submitReservation}
             className="w-full max-w-md flex flex-col gap-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}

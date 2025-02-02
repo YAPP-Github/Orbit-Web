@@ -15,14 +15,13 @@ export default defineConfig({
       '@pages': path.resolve(__dirname, './src/pages'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@assets': path.resolve(__dirname, './public/assets'),
+      '@services': path.resolve(__dirname, './src/services'),
     },
   },
   server: {
     host: true,
     allowedHosts: [
-      '1082-210-183-56-229.ngrok-free.app',
-      '3610-210-183-56-229.ngrok-free.app',
-      'a582-121-167-58-230.ngrok-free.app'
+      
     ],
   },
 });
