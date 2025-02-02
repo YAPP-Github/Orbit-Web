@@ -8,7 +8,7 @@ export async function submitReservation(event) {
   try {
     const response = await fetch('http://dev.orbitalarm.net/api/v1/prereservations', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
       body: JSON.stringify({ email, phone }),
     });
 
