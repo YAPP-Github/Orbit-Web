@@ -1,8 +1,18 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="public/logo.png" width="250" alt="Orbit Logo">
 
-Currently, two official plugins are available:
+# Orbit Web
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 이 프로젝트는 [**IT 연합 동아리 YAPP**](https://www.yapp.co.kr/) 25기에서 수행한 결과물입니다.  
+> <br><br>
+> This project was carried out by the 25th batch of [**YAPP 25th**](https://www.yapp.co.kr/).
+
+</div>
+
+## usage
+
+### run
+```bash
+npm run dev
+```
