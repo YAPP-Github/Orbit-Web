@@ -3,13 +3,13 @@ export async function submitReservation(event) {
 
   const formData = new FormData(event.currentTarget);
   const email = formData.get('email');
-  const phone = formData.get('phone');
+  const phoneNumber = formData.get('phone');
 
   try {
     const response = await fetch('http://dev.orbitalarm.net/api/v1/prereservations', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ email, phone }),
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, phoneNumber }),
     });
 
     // 응답이 실패한 경우 상태 코드에 따라 처리
