@@ -297,11 +297,7 @@ export default function MobileHome() {
           </motion.div>
 
           <motion.div
-            className="w-full mb-8"
-            style={{
-              marginLeft: "calc(-50vw + 50%)",
-              marginRight: "calc(-50vw + 50%)"
-            }}
+            className="mx-auto mb-32"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -310,7 +306,7 @@ export default function MobileHome() {
             <img
               src="/assets/images/mobile_image6.png"
               alt="Orbit Image"
-              className="w-full"
+              className="w-[700px] max-w-full h-auto object-contain"
             />
           </motion.div>
 

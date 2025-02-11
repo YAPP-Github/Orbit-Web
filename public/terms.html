@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>서비스 이용 약관</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="197f368b-77a0-80c0-b382-ed2bc1cd9d20" class="page sans"><header><h1 class="page-title">서비스 이용 약관</h1><p class="page-description"></p></header><div class="page-body"><p id="197f368b-77a0-80cc-9cf7-ddf2d5f7b2a6" class=""><strong>발효일:</strong> 최종 업데이트 날짜로부터 + 30 일</p><p id="197f368b-77a0-8068-b620-d28329fe5cdd" class=""><strong>최종 업데이트:</strong> 2025-02-09</p><blockquote id="197f368b-77a0-80b0-9948-e71a553d3e55" class="">당사 서비스를 사용하기 전에 이 약관을 주의 깊게 읽으세요.</blockquote><hr id="197f368b-77a0-8022-af66-d93160d2f046"/><h2 id="197f368b-77a0-806b-9fe0-d58d3b359e17" class="">해석 및 정의</h2><h3 id="197f368b-77a0-80ed-9815-cff040e797fc" class="">해석</h3><p id="197f368b-77a0-8081-a1e1-c78e2b3a8c48" class="">아래에 정의된 용어들은 단수 또는 복수 형태와 관계없이 본 문서 내에서 동일한 의미를 갖습니다.</p><h3 id="197f368b-77a0-8070-9cb8-cc89db11c04a" class="">정의</h3><p id="197f368b-77a0-80f9-900f-e7286dc828fa" class="">이 약관의 목적을 위해:</p><ul id="197f368b-77a0-8031-9b53-e8b97fc528ac" class="bulleted-list"><li style="list-style-type:disc"><strong>애플리케이션:</strong><br/>Orbit이라는 이름의 전자 기기에 사용자가 다운로드한, 회사가 제공하는 소프트웨어 프로그램.<br/></li></ul><ul id="197f368b-77a0-80e5-a51a-c7627143894e" class="bulleted-list"><li style="list-style-type:disc"><strong>앱 스토어:</strong><br/>애플리케이션이 다운로드된 구글(구글 플레이 스토어) 또는 애플(애플 앱 스토어)에서 운영 및 개발한 디지털 유통 서비스.<br/></li></ul><ul id="197f368b-77a0-8075-9c8d-dd82693c3f7c" class="bulleted-list"><li style="list-style-type:disc"><strong>국가:</strong><br/>대한민국.<br/></li></ul><ul id="197f368b-77a0-80b2-b403-e7ad3f635a99" class="bulleted-list"><li style="list-style-type:disc"><strong>회사:</strong><br/>(이 약관에서는 “회사”, “당사”, “당사의”라 함) Orbit의 저작권을 지닌 자.<br/></li></ul><ul id="197f368b-77a0-805a-8938-c3893560b5ad" class="bulleted-list"><li style="list-style-type:disc"><strong>기기:</strong><br/>컴퓨터, 휴대폰, 디지털 태블릿 등 서비스에 액세스할 수 있는 모든 기기.<br/></li></ul><ul id="197f368b-77a0-8041-9625-ce2d52cc0540" class="bulleted-list"><li style="list-style-type:disc"><strong>피드백:</strong><br/>당사 서비스의 속성, 성능 또는 특징에 관한 사용자의 피드백, 혁신 또는 제안.<br/></li></ul><ul id="197f368b-77a0-804a-a6ed-c4e8659dcc7b" class="bulleted-list"><li style="list-style-type:disc"><strong>애플:</strong><br/>Apple Inc.<br/></li></ul><ul id="197f368b-77a0-80fa-817b-d429929870b5" class="bulleted-list"><li style="list-style-type:disc"><strong>인앱 구매:</strong><br/>애플리케이션을 통해 본 약관 및/또는 앱 스토어 자체 약관에 의거하여 제품, 품목, 서비스 또는 구독을 구매하는 것.<br/></li></ul><ul id="197f368b-77a0-809f-8dcd-db67a9b6df65" class="bulleted-list"><li style="list-style-type:disc"><strong>서비스:</strong><br/>애플리케이션.<br/></li></ul><ul id="197f368b-77a0-803b-be40-f79442a551fb" class="bulleted-list"><li style="list-style-type:disc"><strong>구독:</strong><br/>회사가 사용자에게 가입 방식으로 제공하는 서비스 또는 서비스에 대한 액세스.<br/></li></ul><ul id="197f368b-77a0-8081-a699-e7f20d20d98b" class="bulleted-list"><li style="list-style-type:disc"><strong>이용약관 (약관):</strong><br/>사용자와 회사 간의 서비스 이용에 관한 전체 약관.<br/></li></ul><ul id="197f368b-77a0-80a9-a74c-ced0f4c9ef1f" class="bulleted-list"><li style="list-style-type:disc"><strong>제3자 소셜 미디어 서비스:</strong><br/>서비스에 의해 표시, 포함 또는 제공될 수 있는 제3자가 제공하는 모든 서비스 또는 콘텐츠 (데이터, 정보, 제품 또는 서비스 포함).<br/></li></ul><ul id="197f368b-77a0-8006-b7dc-f59b44508ce0" class="bulleted-list"><li style="list-style-type:disc"><strong>사용자:</strong><br/>서비스에 액세스하거나 서비스를 사용하는 개인, 회사 또는 그러한 개인이 대신하는 법적 실체.<br/></li></ul><ul id="197f368b-77a0-80ce-b53f-f42e4d239522" class="bulleted-list"><li style="list-style-type:disc"><strong>회원:</strong><br/>회사의 서버에 등록된 활성 계정을 보유한 개인, 회사 또는 그러한 개인이 대신하는 법적 실체.<br/><blockquote id="197f368b-77a0-8034-a16e-f62a43b7fb64" class="">회원은 사용자에 해당되며, 본 약관의 모든 조항은 회원에게도 적용됩니다.</blockquote></li></ul><hr id="197f368b-77a0-8030-883b-d5fb7d17a998"/><h2 id="197f368b-77a0-8009-b915-eedfd669ba46" class="">승인</h2><p id="197f368b-77a0-80bf-a1d1-ddb2a0ee8c79" class="">다음은 본 서비스 사용에 적용되는 이용 약관 및 사용자와 회사 간의 계약이며, 서비스 사용과 관련된 모든 사용자의 권리와 의무를 규정합니다.</p><ul id="197f368b-77a0-80c0-ab51-ea8d5b800544" class="bulleted-list"><li style="list-style-type:disc">서비스에 대한 액세스 및 사용은 사용자가 본 약관을 <strong>수락</strong>하고 <strong>준수</strong>하는 것을 조건으로 합니다.</li></ul><ul id="197f368b-77a0-801f-8a26-d4f1a9f09f9d" class="bulleted-list"><li style="list-style-type:disc">본 약관은 모든 방문자, 사용자 및 서비스에 액세스하거나 사용하는 모든 사람에게 적용됩니다.</li></ul><ul id="197f368b-77a0-808f-ae86-e508917a1540" class="bulleted-list"><li style="list-style-type:disc">서비스를 사용함으로써 사용자는 본 약관에 <strong>구속</strong>된다는 데 동의합니다.<br/>동의하지 않는 경우 서비스에 액세스할 수 없습니다.<br/></li></ul><ul id="197f368b-77a0-8059-9867-de32ecc64d38" class="bulleted-list"><li style="list-style-type:disc">또한, 서비스 이용은 회사의 <strong>개인정보 보호 정책</strong>을 수락하고 준수하는 것을 전제로 합니다.<blockquote id="197f368b-77a0-80eb-8fc8-d818b50e381a" class="">주의: 당사 서비스를 사용하기 전에 개인정보 보호 정책을 반드시 읽어보세요.</blockquote></li></ul><hr id="197f368b-77a0-8030-a274-eb7dfc5d5c9a"/><h2 id="197f368b-77a0-80fd-ae72-e12b2ca3819e" class="">회원 계정</h2><p id="197f368b-77a0-8044-8ae7-f3c8535a1d24" class=""><em>(회원 계정 관련 내용은 별도로 명시되지 않은 경우 생략합니다.)</em></p><hr id="197f368b-77a0-80eb-ad8e-e398e804f265"/><h2 id="197f368b-77a0-8055-8009-dbfa2b1f5a3b" class="">지적 재산권</h2><ul id="197f368b-77a0-8059-b627-c6caefd1e7c4" class="bulleted-list"><li style="list-style-type:disc">서비스 및 본래의 콘텐츠(사용자 또는 타인이 제공한 콘텐츠 제외), 특징 및 기능은 회사 및 라이센스 제공자의 독점 재산이며 계속 유지됩니다.</li></ul><ul id="197f368b-77a0-80f7-a89d-d27d006ea2d5" class="bulleted-list"><li style="list-style-type:disc">서비스는 저작권, 상표 및 기타 국내외 법률에 의해 보호됩니다.</li></ul><ul id="197f368b-77a0-80a7-a576-d59f905edfd5" class="bulleted-list"><li style="list-style-type:disc">당사의 사전 서면 동의 없이 당사의 상표 및 트레이드 드레스를 제품 또는 서비스와 관련하여 사용할 수 없습니다.</li></ul><hr id="197f368b-77a0-8035-9e56-c2bdfea2da90"/><h2 id="197f368b-77a0-80f6-8bcf-ef88f1d28cbc" class="">사용자의 피드백</h2><ul id="197f368b-77a0-8090-afc8-dd63efff478c" class="bulleted-list"><li style="list-style-type:disc">사용자가 회사에 제공하는 모든 피드백에 대한 권리, 소유권 및 이권은 회사에 귀속됩니다.</li></ul><ul id="197f368b-77a0-80c6-8ae4-e85e38b911e7" class="bulleted-list"><li style="list-style-type:disc">만약 양도가 효과가 없을 경우, 사용자는 회사에 피드백을 <strong>비독점적, 영구적, 취소 불가능</strong>, 로열티 없는 전 세계적 권리 및 라이센스로 부여하는 데 동의합니다.</li></ul><hr id="197f368b-77a0-804f-a770-f8c2636da622"/><h2 id="197f368b-77a0-80ca-8730-dfd3b05745b0" class="">다른 웹 사이트 링크</h2><ul id="197f368b-77a0-807d-9d16-faed3eb4bf9c" class="bulleted-list"><li style="list-style-type:disc">당사 서비스에는 회사가 소유하거나 관리하지 않는 제3자 웹 사이트 또는 서비스에 대한 링크가 포함될 수 있습니다.</li></ul><ul id="197f368b-77a0-8026-8be1-e24dc2f8990c" class="bulleted-list"><li style="list-style-type:disc">회사는 제3자 웹 사이트나 서비스의 콘텐츠, 개인정보 보호 정책 또는 관행에 대해 통제하지 않으며 이에 대해 책임지지 않습니다.</li></ul><ul id="197f368b-77a0-8081-bb4a-cfde5a0def63" class="bulleted-list"><li style="list-style-type:disc">사용자는 방문하는 제3자 웹 사이트나 서비스의 이용 약관 및 개인정보 보호 정책을 반드시 확인해야 합니다.</li></ul><hr id="197f368b-77a0-804b-a5fe-e0c6445f4445"/><h2 id="197f368b-77a0-80b5-92a9-e221577bb251" class="">해지</h2><ul id="197f368b-77a0-8019-b0ae-fd6255622ca2" class="bulleted-list"><li style="list-style-type:disc">당사는 사용자가 본 약관을 위반하는 경우 등, 어떠한 이유로든 사전 통지 없이 사용자의 액세스를 즉시 종료하거나 중단할 수 있습니다.</li></ul><ul id="197f368b-77a0-805f-8de8-c5d7ac399757" class="bulleted-list"><li style="list-style-type:disc">해지 시 사용자의 서비스 이용 권리는 즉시 중단됩니다.</li></ul><hr id="197f368b-77a0-80c5-8933-e40100bcc5ca"/><h2 id="197f368b-77a0-8016-bc64-c3d2986e5737" class="">책임의 제한</h2><ul id="197f368b-77a0-8042-ad04-c2f1a4e0039d" class="bulleted-list"><li style="list-style-type:disc">회사와 공급업체의 전체 책임은 사용자가 서비스를 통해 실제로 지불한 금액 또는 구매하지 않은 경우 <strong>미화 100달러</strong>로 제한됩니다.</li></ul><ul id="197f368b-77a0-8035-9313-d3b7722bbfad" class="bulleted-list"><li style="list-style-type:disc">관련 법률이 허용하는 최대 범위 내에서, 회사 또는 공급업체는 특수, 부수적, 간접적 또는 결과적 손해에 대해 책임지지 않습니다.</li></ul><ul id="197f368b-77a0-803e-824d-e51ed99c00db" class="bulleted-list"><li style="list-style-type:disc">일부 관할구역에서는 이러한 제한이 일부 또는 전부 적용되지 않을 수 있습니다.</li></ul><hr id="197f368b-77a0-802a-a83a-f1adfd881a78"/><h2 id="197f368b-77a0-80fd-a4cd-da9642840ef0" class="">“있는 그대로” 및 “사용 가능한 상태로” 면책 조항</h2><ul id="197f368b-77a0-803e-b99d-e55a1c44143a" class="bulleted-list"><li style="list-style-type:disc">서비스는 “있는 그대로” 및 “사용 가능한 상태로” 제공되며, 어떠한 보증도 없이 제공됩니다.</li></ul><ul id="197f368b-77a0-800a-acb8-dd03bb3beb54" class="bulleted-list"><li style="list-style-type:disc">회사는 상품성, 특정 목적 적합성, 소유권 및 비침해에 대한 모든 묵시적 보증을 포함한 보증을 명시적으로 부인합니다.</li></ul><ul id="197f368b-77a0-806d-879b-ff5047bf6fed" class="bulleted-list"><li style="list-style-type:disc">서비스가 사용자의 요구를 충족하거나 의도된 결과를 달성함, 다른 시스템과 호환되거나 중단 없이 작동함을 보증하지 않습니다.</li></ul><ul id="197f368b-77a0-80de-8821-d6f436668e3f" class="bulleted-list"><li style="list-style-type:disc">단, 일부 관할구역에서는 소비자의 법적 권리에 대한 특정 보증 또는 제한 배제가 허용되지 않습니다.</li></ul><hr id="197f368b-77a0-804f-8d25-e1e2929d4d50"/><h2 id="197f368b-77a0-80e8-97c0-fa7578c6a622" class="">준거법</h2><ul id="197f368b-77a0-807b-9fb1-d09c8bcacb71" class="bulleted-list"><li style="list-style-type:disc">본 약관 및 사용자의 서비스 사용에는 해당 국가의 법률이 적용됩니다.</li></ul><ul id="197f368b-77a0-8019-8b68-cdd8b94e2351" class="bulleted-list"><li style="list-style-type:disc">사용자의 애플리케이션 사용은 다른 지역, 시/도, 국가 또는 국제법의 적용을 받을 수 있습니다.</li></ul><hr id="197f368b-77a0-8038-8686-fdb058e21ebc"/><h2 id="197f368b-77a0-800b-b7f5-da602c880d6e" class="">분쟁 해결</h2><ul id="197f368b-77a0-8076-91c7-dfcc30dc4701" class="bulleted-list"><li style="list-style-type:disc">서비스와 관련하여 분쟁이 발생할 경우, 먼저 회사에 연락하여 비공식적으로 해결하도록 노력합니다.</li></ul><hr id="197f368b-77a0-80fa-b747-f8b706aca69a"/><h2 id="197f368b-77a0-802f-a643-db6fc865c323" class="">유럽 연합(EU) 사용자의 경우</h2><ul id="197f368b-77a0-8011-a2a2-ddc10b85019d" class="bulleted-list"><li style="list-style-type:disc">EU 소비자는 거주 국가의 법률에 따른 필수 조항의 혜택을 받습니다.</li></ul><hr id="197f368b-77a0-80ac-98a0-f10db9dbc00b"/><h2 id="197f368b-77a0-8078-bb0e-cf2ee12c50f5" class="">미국 연방정부 최종사용조항</h2><ul id="197f368b-77a0-8054-ae30-fff1d027a6f8" class="bulleted-list"><li style="list-style-type:disc">미국 연방정부 최종 사용자는 본 서비스를 48 C.F.R. §2.101조에 정의된 “상업적 항목”으로 간주합니다.</li></ul><hr id="197f368b-77a0-80f7-be10-f5ba680b45b3"/><h2 id="197f368b-77a0-80fa-88e8-c256a8bff96e" class="">미국 법률 준수</h2><ul id="197f368b-77a0-8078-9d04-d9b10476d066" class="bulleted-list"><li style="list-style-type:disc">사용자는 미국 정부의 금수조치 대상국가 또는 “테러 지원” 국가에 있지 않으며, 미국 정부의 금지 또는 제한 당사자 목록에 등재되어 있지 않음을 진술하고 보증합니다.</li></ul><hr id="197f368b-77a0-80a6-a323-e3a7c0b17f35"/><h2 id="197f368b-77a0-8018-bcf1-f85430b77315" class="">분리 가능성 및 포기</h2><h3 id="197f368b-77a0-80c2-a7bc-eb1d66ff391c" class="">분리 가능성</h3><ul id="197f368b-77a0-806c-a1cf-f7cdd5a14a45" class="bulleted-list"><li style="list-style-type:disc">본 약관의 일부 조항이 강제할 수 없거나 무효일 경우, 해당 조항은 가능한 최대 범위 내에서 그 목적을 달성하도록 변경되며 나머지 조항은 계속 유효합니다.</li></ul><h3 id="197f368b-77a0-80ed-a84c-fe143c24c447" class="">포기</h3><ul id="197f368b-77a0-8046-968a-f879a8249ba1" class="bulleted-list"><li style="list-style-type:disc">본 약관에 따른 권리 행사가 없다고 해서 향후 권리 행사의 포기로 간주되지 않으며, 모든 후속 위반에 대해 권리 행사가 유지됩니다.</li></ul><hr id="197f368b-77a0-8081-a50d-d208627c72be"/><h2 id="197f368b-77a0-8089-b881-e3f3ffb60531" class="">번역 해석</h2><ul id="197f368b-77a0-80c7-8df0-d705b340d69d" class="bulleted-list"><li style="list-style-type:disc">본 이용 약관은 번역된 버전일 수 있으며, 분쟁 발생 시 원본 영어 텍스트가 우선합니다.</li></ul><hr id="197f368b-77a0-805a-b591-ce608c1e6700"/><h2 id="197f368b-77a0-80de-9c2e-e6d7c50e1bb1" class="">본 약관의 변경 사항</h2><ul id="197f368b-77a0-80d5-a48b-d9169dbc8beb" class="bulleted-list"><li style="list-style-type:disc">당사는 단독 재량에 따라 언제든지 본 약관을 수정 또는 교체할 권리를 보유합니다.</li></ul><ul id="197f368b-77a0-8048-9ac1-f8dd4b1bc7e4" class="bulleted-list"><li style="list-style-type:disc">개정안이 중요한 경우, 새로운 약관 발효 최소 30일 전에 통지를 제공하기 위해 노력합니다.</li></ul><ul id="197f368b-77a0-8082-8587-c31b342bf661" class="bulleted-list"><li style="list-style-type:disc">개정 사항이 발효된 후에도 계속해서 서비스를 사용하면 개정된 약관에 동의하는 것으로 간주됩니다.</li></ul><ul id="197f368b-77a0-80a8-a519-cafecb46b674" class="bulleted-list"><li style="list-style-type:disc">새로운 약관의 일부 또는 전체에 동의하지 않는 경우, 웹 사이트 및 서비스 사용을 중지해야 합니다.</li></ul><hr id="197f368b-77a0-80ed-92f5-fe9e3bd9600f"/><h2 id="197f368b-77a0-8097-8239-e02f65ba34cd" class="">문의하기</h2><ul id="197f368b-77a0-803a-9d94-f3d017c1e6c2" class="bulleted-list"><li style="list-style-type:disc">본 이용 약관에 대해 궁금한 점이 있으면 아래 연락처로 문의하세요.<ul id="197f368b-77a0-8011-9a4d-ef6d6fcac3ea" class="bulleted-list"><li style="list-style-type:circle"><strong>이메일:</strong> <a href="mailto:orbitalarm.official@gmail.com">orbitalarm.official@gmail.com</a></li></ul></li></ul><p id="197f368b-77a0-809b-9f32-cd11c9ea2638" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
