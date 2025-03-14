@@ -50,12 +50,32 @@ export default function MobileHome() {
               </p>
             </div>
 
-            <button
-              onClick={scrollToReservationForm}
-              className="mt-4 w-[200px] h-[50px] bg-[#FDFE96] text-black rounded-2xl text-lg hover:bg-[#0F223F] hover:text-[#FDFE96] font-semibold transition-colors"
-            >
-              사전 예약 하러가기
-            </button>
+            <div className="flex gap-[10px] mt-4">
+              <a
+                  href="https://apps.apple.com/kr/app/orbit-%EC%98%A4%EB%A5%B4%EB%B9%84-%EC%95%8C%EB%9E%8C-%EA%B8%B0%EC%83%81%EC%95%8C%EB%9E%8C-%EC%9A%B4%EC%84%B8/id6741705831"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
+              >
+                <img
+                    src="/assets/images/app_store_image.png"
+                    alt="Download on the App Store"
+                    className="object-contain h-[25px]"
+                />
+              </a>
+              <a
+                  href="https://play.google.com/store/apps/details?id=com.yapp.orbit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
+              >
+                <img
+                    src="/assets/images/google_play_image.png"
+                    alt="Get it on Google Play"
+                    className="object-contain h-[30px]"
+                />
+              </a>
+            </div>
           </motion.div>
 
           {/* 섹션 1 하단 이미지 */}
@@ -186,13 +206,32 @@ export default function MobileHome() {
               </p>
             </div>
 
-            {/* 사전 예약 버튼 */}
-            <button
-              onClick={scrollToReservationForm}
-              className="mt-4 w-[200px] h-[50px] bg-[#FDFE96] text-black rounded-2xl text-lg hover:bg-[#0F223F] hover:text-[#FDFE96] font-semibold transition"
-            >
-              사전 예약 하러가기
-            </button>
+            <div className="flex gap-[10px] mt-4">
+              <a
+                  href="https://apps.apple.com/kr/app/orbit-%EC%98%A4%EB%A5%B4%EB%B9%84-%EC%95%8C%EB%9E%8C-%EA%B8%B0%EC%83%81%EC%95%8C%EB%9E%8C-%EC%9A%B4%EC%84%B8/id6741705831"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
+              >
+                <img
+                    src="/assets/images/app_store_image.png"
+                    alt="Download on the App Store"
+                    className="object-contain h-[25px]"
+                />
+              </a>
+              <a
+                  href="https://play.google.com/store/apps/details?id=com.yapp.orbit"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
+              >
+                <img
+                    src="/assets/images/google_play_image.png"
+                    alt="Get it on Google Play"
+                    className="object-contain h-[30px]"
+                />
+              </a>
+            </div>
           </motion.div>
 
           {/* 섹션 4 하단 이미지 – 그대로 사용 */}
@@ -324,57 +363,39 @@ export default function MobileHome() {
               className="mb-4 w-auto h-12"
             />
             <p className="font-pretendard font-regular text-[14px] leading-[20px] text-white/70 mb-4">
-              2025년 2월, 정식 버전 출시 예정
+              실제 사주 정보를 기반으로 운세를 보내드려요
             </p>
             <p className="font-pretendard font-bold text-[22px] leading-[30px] text-white">
-              스토어에 출시되면 알람을 보내드릴게요<br />
-              <span className="text-[#FEFF65]">사전 예약</span>하고
-              즐거운 기상을<br />
-              시작해보세요!!
+              기상 알람과 함께 점쳐보는 나의 하루 운세,<br />
+              지금 바로 시작해 보세요!
             </p>
           </motion.div>
-
-          {/* 폼 섹션 */}
-          <motion.form
-            ref={reservationFormRef}
-            onSubmit={submitReservation}
-            className="w-full max-w-sm flex flex-col gap-4"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <div className="flex flex-col items-start w-full">
-              <label className="font-pretendard text-white font-medium mb-1">
-                이메일
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="noreply@orbitalarm.net"
-                className="w-full px-3 py-2 rounded-md bg-[#2A2C33] text-white focus:outline-none focus:ring-2 focus:ring-[#FEFF65]"
-              />
-            </div>
-            <div className="flex flex-col items-start w-full">
-              <label className="font-pretendard text-white font-medium mb-1">
-                연락처
-              </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="010-1234-5678"
-                className="w-full px-3 py-2 rounded-md bg-[#2A2C33] text-white focus:outline-none focus:ring-2 focus:ring-[#FEFF65]"
-              />
-            </div>
-            <button
-              type="submit"
-              className="mt-2 w-full py-2 bg-[#FEFF65] text-black font-semibold rounded-md hover:bg-[#0F223F] hover:text-[#FDFE96] transition-colors"
+          <div className="flex gap-[10px] mt-4">
+            <a
+                href="https://apps.apple.com/kr/app/orbit-%EC%98%A4%EB%A5%B4%EB%B9%84-%EC%95%8C%EB%9E%8C-%EA%B8%B0%EC%83%81%EC%95%8C%EB%9E%8C-%EC%9A%B4%EC%84%B8/id6741705831"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
             >
-              사전 예약하기
-            </button>
-          </motion.form>
+              <img
+                  src="/assets/images/app_store_image.png"
+                  alt="Download on the App Store"
+                  className="object-contain h-[25px]"
+              />
+            </a>
+            <a
+                href="https://play.google.com/store/apps/details?id=com.yapp.orbit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-[140px] h-[40px] bg-[#FFFFFF] rounded-[10px] flex items-center justify-center"
+            >
+              <img
+                  src="/assets/images/google_play_image.png"
+                  alt="Get it on Google Play"
+                  className="object-contain h-[30px]"
+              />
+            </a>
+          </div>
         </section>
       </main>
       <Footer />
